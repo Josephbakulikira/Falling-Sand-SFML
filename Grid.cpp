@@ -23,10 +23,10 @@ void Grid::Update() {
 					currentGrid[x][y + 1] = 1;
 				}
 				else if (previousGrid[x + 1][y + 1] == 0 && previousGrid[x - 1][y + 1] == 0) {
-					bool direction = rand() % 2;
+					bool choice = rand() % 2;
 
 					currentGrid[x][y] = 0;
-					if (direction == 0) {
+					if (choice == 0) {
 						currentGrid[x + 1][y + 1] = 1;
 					}
 					else {
@@ -76,7 +76,7 @@ void Grid::Draw(sf::RenderWindow& window) {
 				sf::RectangleShape cell = sf::RectangleShape();
 				cell.setSize(sf::Vector2f(cell_size, cell_size));
 				cell.setPosition(x * cell_size, y * cell_size);
-				cell.setFillColor(sf::Color::White);
+				cell.setFillColor(sf::Color::Yellow);
 
 				window.draw(cell);
 			}
